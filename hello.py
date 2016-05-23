@@ -19,23 +19,9 @@ def hello():
 # To see env variables
 @app.route('/vars')
 def showCFVariables():
-    cf_keys = ["CF_INSTANCE_ADDR",
-               "CF_INSTANCE_GUID",
-               "CF_INSTANCE_INDEX",
-               "CF_INSTANCE_IP",
-               "CF_INSTANCE_PORT",
-               "CF_INSTANCE_PORTS",
-               "HOME",
-               "MEMORY_LIMIT",
-               "PORT",
-               "PWD",
-               "TMPDIR",
-               "USER",
-               "VCAP_APPLICATION",
-               "VCAP_SERVICES"]
     cf_var_dict = {}
 
-    for k in cf_keys:
+    for k in os.environ:
         cf_var_dict[k] = os.getenv(k)
 
     return render('index.html', variables=cf_var_dict)
