@@ -34,7 +34,12 @@ For more details, see at [Binary Buildpack](http://docs.cloudfoundry.org/buildpa
 The directory include the scripts executed in the phase of application deployment.
 You can specify `.sh` extention file to declare your own environemental variables. In this sample code, the env var `MY_OWN_ENV_VAR` is declared in `setenv.sh`.
 Fore more details, see at [Set Environment Variables
-](https://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html#profiled "Set Environment Variables")
+](https://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html#profiled "Set Environment Variables").
+
+#### .cfignore
+The file declares the files which would not require to be built as an application. The file type (name rule) specified into this file will be ignores in build phase and not included to deployed application. The rules to specify file types follow to [.gitignore template](https://github.com/github/gitignore).
+
+For more details, see [Ignore Unnecessary Files When Pushing](https://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html#exclude "Ignore Unnecessary Files When Pushing").
 
 ### Web application files
 
