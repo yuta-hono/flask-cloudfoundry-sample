@@ -11,6 +11,8 @@ This is a sample application to deploy Flask application for Cloud Foundry (CF).
 2. Run `$ cf push <yourapp> -b https://github.com/cloudfoundry/python-buildpack`
 3. Go to your application URL. `http://yourapp.example.com/` just shows "Hello world", and `http://yourapp.example.com/vars` shows the available environment variables on CF
 
+<img src="https://raw.githubusercontent.com/yuta-hono/flask-cloudfoundry-sample/images/cf_vars.png" width="440 px">
+
 ![app image](https://raw.githubusercontent.com/yuta-hono/flask-cloudfoundry-sample/images/cf_vars.png "demo application image")
 
 ## Files
