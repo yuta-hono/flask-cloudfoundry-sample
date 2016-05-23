@@ -39,6 +39,37 @@ Fore more details, see at [Set Environment Variables
 #### .cfignore
 The file declares the files which would not require to be built as an application. The file type (name rule) specified into this file will be ignores in build phase and not included to deployed application. The rules to specify file types follow to [.gitignore template](https://github.com/github/gitignore).
 
+You can confirm that what is happened to your deployed application with changing this `.cfignore` rule. For example, just deploy this sample code as is, you can not find "LICENSE" file on the deployed application on CF.
+
+```bash
+$ cf ssh <app_name>
+```
+
+After running this command, you will login to the container which the app running.
+
+```bash
+vcap@gisoujblbc5:~$ ls
+app  logs  staging_info.yml  tmp
+```
+
+If you login to `app` dir , you will see the deployed application files. Since `LICENSE` file is configured to be ignored, it is not on the container.
+
+```bash
+vcap@gisoujblbc5:~$ cd app
+vcap@gisoujblbc5:~/app$ ls
+hello.py  Procfile   requirements.txt  templates
+runtime.txt
+```
+
+If you remove the line of `LICENSE` from `.cfignore` and re-deploy that to CF, you will see that on the container.
+
+```bash
+vcap@gisoujblbc5:~$ cd app
+vcap@gisoujblbc5:~/app$ ls
+hello.py  Procfile   requirements.txt  templates
+LICENSE runtime.txt
+```
+
 For more details, see [Ignore Unnecessary Files When Pushing](https://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html#exclude "Ignore Unnecessary Files When Pushing").
 
 ### Web application files
