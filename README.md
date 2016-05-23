@@ -13,8 +13,6 @@ This is a sample application to deploy Flask application for Cloud Foundry (CF).
 
 <img src="https://raw.githubusercontent.com/yuta-hono/flask-cloudfoundry-sample/images/cf_vars.png" width="440 px">
 
-![app image](https://raw.githubusercontent.com/yuta-hono/flask-cloudfoundry-sample/images/cf_vars.png "demo application image")
-
 ## Files
 
 ### Files to declare runtime envinronment
