@@ -30,6 +30,12 @@ The file specify what commands run the application.
 This also can specified in a deploy command with `-c` option.
 For more details, see at [Binary Buildpack](http://docs.cloudfoundry.org/buildpacks/binary/index.html "Binary Buildpack").
 
+#### .profile.d/*
+The directory include the scripts executed in the phase of application deployment.
+You can specify `.sh` extention file to declare your own environemental variables. In this sample code, the env var `MY_OWN_ENV_VAR` is declared in `setenv.sh`.
+Fore more details, see at [Set Environment Variables
+](https://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html#profiled "Set Environment Variables")
+
 ### Web application files
 
 #### hello.py , templates/*
