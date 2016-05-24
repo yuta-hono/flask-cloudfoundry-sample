@@ -67,10 +67,12 @@ def showCFVariables():
 @app.route('/ip')
 def showIp():
     srcIp = request.access_route[0]
-    allowed_ip = '192.0.2.1'
+
+    # List of IP addresses to allow the access
+    allowed_ip = ['192.0.2.1', '192.0.2.2']
 
     # Please change the src IP you would like to allows
-    if srcIp != allowed_ip:
+    if srcIp not in allowed_ip:
         abort(403)
 
     return 'Your IP %s is allowed' % srcIp
